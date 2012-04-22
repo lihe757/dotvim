@@ -1,0 +1,3 @@
+[submodule "rsense"]
+	path = rsense
+	url = git://github.com/m2ym/rsense.git
