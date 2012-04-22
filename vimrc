@@ -66,10 +66,10 @@
  
  
  "lua set
- let g:Lua_AuthorName      = 'your name'     
- let g:Lua_AuthorRef       = 'yourname'                         
- let g:Lua_Email           = 'yourmail@yourmail.com'            
- let g:Lua_Company         = 'your company'    
+ let g:Lua_AuthorName      = 'lihex'
+ let g:Lua_AuthorRef       = 'lhx'
+ let g:Lua_Email           = 'lihe757@gmail.com'
+ let g:Lua_Company         = 'cocos2d-x.org'
  
  "Use emacs style key binding on i mode
  imap <C-F> <RIGHT>
