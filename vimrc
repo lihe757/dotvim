@@ -31,7 +31,59 @@
  filetype on
  filetype plugin on
 
- "Vundle configuration
+
+ " Set Arduino dictionary word list
+ au FileType arduino set dictionary=~/.vim/dicts/arduinowords
+ 
+ "key mappings
+ "----------------------------
+ "Pane movement
+ map <C-j> <C-W>j
+ map <C-k> <C-W>k
+ map <C-h> <C-W>h
+ map <C-l> <C-W>l
+ 
+ "Resize panes with the mouse and select text
+ set mouse=a
+ 
+ "Move lines up and down
+ nnoremap m2<cr> :m+2
+ nnoremap m1<cr> :m+
+ nnoremap m-2<cr> :m-2
+ 
+ "NerdTree Toggle
+ nnoremap <F3> :NERDTreeToggle<CR>
+ 
+ "Ctags toggle
+ nmap <F4> :TagbarToggle<CR>
+ let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+ 
+ "update help doc
+ nnoremap <F7> :helptags ~/.vim/doc<CR>
+ 
+ "OmniComplete 
+ inoremap <Nul> <C-x><C-o>
+ 
+ 
+ "lua set
+ let g:Lua_AuthorName      = 'your name'     
+ let g:Lua_AuthorRef       = 'yourname'                         
+ let g:Lua_Email           = 'yourmail@yourmail.com'            
+ let g:Lua_Company         = 'your company'    
+ 
+ "Use emacs style key binding on i mode
+ imap <C-F> <RIGHT>
+ imap <C-B> <LEFT>
+ imap <C-E> <END>
+ imap <C-A> <HOME>
+ imap <C-D> <DELETE>
+ 
+ "a.vim key binding
+ noremap \a  :A<CR>
+ inoremap \a <C-C>:A<CR>
+
+
+ "==============Vundle configuration ==================
  set nocompatible               " be iMproved
  filetype off                   " required!
 
