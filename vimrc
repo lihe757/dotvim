@@ -87,7 +87,7 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\scripts\markdown.py %:t -e chinese > %:r.html<CR> 
+ nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
  noremap \e  :!cmd /c start ./%:r.html<CR>
 
  "Backspace
