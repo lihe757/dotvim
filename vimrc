@@ -88,7 +88,7 @@
 
  "markdown
  nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
- noremap \e  :!cmd /c start ./%:r.html<CR>
+ noremap \e  :!cmd /c start %:p:r.html<CR>
 
  "Backspace
  if has("gui_running") && has("win32")
