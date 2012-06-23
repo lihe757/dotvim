@@ -56,8 +56,12 @@
  
  "Ctags toggle
  nmap <F4> :TagbarToggle<CR>
+ if has("win32")
+ "let g:tagbar_ctags_bin = '/bin/ctags'
+ else
  let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
- 
+ endif
+
  "update help doc
  nnoremap <F7> :helptags ~/.vim/doc<CR>
  
@@ -81,6 +85,18 @@
  "a.vim key binding
  noremap \a  :A<CR>
  inoremap \a <C-C>:A<CR>
+
+ "markdown
+ nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
+ noremap \e  :!cmd /c start %:p:r.html<CR>
+
+ "Backspace
+ if has("gui_running") && has("win32")
+    set backspace=2
+    " Make shift-insert work like in Xterm
+    map <S-Insert> <MiddleMouse>
+    map! <S-Insert> <MiddleMouse>
+ endif
 
 
  "==============Vundle configuration ==================
