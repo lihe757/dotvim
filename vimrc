@@ -1,6 +1,6 @@
  syntax on
  set number
- colorscheme slate
+ colorscheme desert
  set tabstop=4
  set shiftwidth=4
  
