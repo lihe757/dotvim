@@ -133,6 +133,7 @@
  Bundle 'lua-support'
  Bundle 'a.vim'
  Bundle 'bash-support.vim'
+ Bundle 'vimwiki'
  " ...
 
  filetype plugin indent on     " required!
