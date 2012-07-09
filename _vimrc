@@ -1,8 +1,9 @@
  syntax on
  set number
- colorscheme slate
+ colorscheme desert
  set tabstop=4
  set shiftwidth=4
+ set noswapfile
  
  "additoins
  set title
@@ -33,7 +34,7 @@
 
 
  " Set Arduino dictionary word list
- au FileType arduino set dictionary=~/.vim/dicts/arduinowords
+ au FileType arduino set dictionary=$VIMFILES/dicts/arduinowords
  
  "key mappings
  "----------------------------
@@ -57,13 +58,17 @@
  "Ctags toggle
  nmap <F4> :TagbarToggle<CR>
  if has("win32")
+    let $VIMFILES = $HOME.'/vimfiles'
+    let $V = $HOME.'/_vimrc'
 
  else
+    let $VIMFILES = $HOME.'/.vim'
+    let $V = $HOME.'/.vimrc'
      let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
  endif
 
  "update help doc
- nnoremap <F7> :helptags ~/.vim/doc<CR>
+ nnoremap <F7> :helptags $HOME/doc<CR>
  
  "OmniComplete 
  inoremap <Nul> <C-x><C-o>
@@ -87,7 +92,7 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
+ nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown.py % -e chinese > %:r.html<CR> 
  noremap \e  :!cmd /c start %:p:r.html<CR>
 
  "Backspace
@@ -103,7 +108,7 @@
  set nocompatible               " be iMproved
  filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
+ set rtp+=$VIMFILES/bundle/vundle/
  call vundle#rc()
 
  " let Vundle manage Vundle
@@ -133,6 +138,7 @@
  Bundle 'lua-support'
  Bundle 'a.vim'
  Bundle 'bash-support.vim'
+ Bundle 'vimwiki'
  " ...
 
  filetype plugin indent on     " required!
