@@ -139,6 +139,7 @@
  Bundle 'a.vim'
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
+ Bundle 'DoxygenToolkit.vim'
  " ...
 
  filetype plugin indent on     " required!
