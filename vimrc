@@ -3,6 +3,7 @@
  colorscheme desert
  set tabstop=4
  set shiftwidth=4
+ set nobackup`
  
  "additoins
  set title
