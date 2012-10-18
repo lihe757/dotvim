@@ -4,6 +4,12 @@
  set tabstop=4
  set shiftwidth=4
  set noswapfile
+ set encoding=utf-8
+ set fileencodings=utf-8,chinese,latin-1
+
+ source $VIMRUNTIME/delmenu.vim
+ source $VIMRUNTIME/menu.vim
+ language messages zh_CN.utf-8
  
  "additoins
  set title
@@ -140,6 +146,7 @@
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
  Bundle 'DoxygenToolkit.vim'
+ Bundle 'xmledit'
  " ...
 
  filetype plugin indent on     " required!
