@@ -3,6 +3,7 @@
  colorscheme desert
  set tabstop=4
  set shiftwidth=4
+ set nobackup
  
  "additoins
  set title
@@ -87,8 +88,13 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
- noremap \e  :!cmd /c start %:p:r.html<CR>
+ if has("win32")
+     nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
+     noremap \e  :!cmd /c start %:p:r.html<CR>
+ else
+     nnoremap <F8> :!python -m markdown % -e utf-8 > %:r.html<CR> 
+     noremap \e  :!open  %:r.html<CR>
+ endif
 
  "Backspace
  if has("gui_running") && has("win32")
