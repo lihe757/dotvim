@@ -3,8 +3,14 @@
  colorscheme desert
  set tabstop=4
  set shiftwidth=4
- set nobackup
  set noswapfile
+ set nobackup
+ set encoding=utf-8
+ set fileencodings=utf-8,chinese,latin-1
+
+ source $VIMRUNTIME/delmenu.vim
+ source $VIMRUNTIME/menu.vim
+ language messages zh_CN.utf-8
  
  "additoins
  set title
@@ -35,7 +41,7 @@
 
 
  " Set Arduino dictionary word list
- au FileType arduino set dictionary=~/.vim/dicts/arduinowords
+ au FileType arduino set dictionary=~/vimfiles/dicts/arduinowords
  
  "key mappings
  "----------------------------
@@ -65,7 +71,7 @@
  endif
 
  "update help doc
- nnoremap <F7> :helptags ~/.vim/doc<CR>
+ nnoremap <F7> :helptags ~/vimfiles/doc<CR>
  
  "OmniComplete 
  inoremap <Nul> <C-x><C-o>
@@ -89,13 +95,8 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- if has("win32")
-     nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
-     noremap \e  :!cmd /c start %:p:r.html<CR>
- else
-     nnoremap <F8> :!python -m markdown % -e utf-8 > %:r.html<CR> 
-     noremap \e  :!open  %:r.html<CR>
- endif
+ nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR>
+ noremap \e  :!cmd /c start %:p:r.html<CR>
 
  "Backspace
  if has("gui_running") && has("win32")
@@ -110,7 +111,7 @@
  set nocompatible               " be iMproved
  filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
+ set rtp+=~/vimfiles/bundle/vundle/
  call vundle#rc()
 
  " let Vundle manage Vundle
@@ -141,7 +142,8 @@
  Bundle 'a.vim'
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
- Bundle 'ack.vim'
+ Bundle 'DoxygenToolkit.vim'
+ Bundle 'xmledit'
  " ...
 
  filetype plugin indent on     " required!
