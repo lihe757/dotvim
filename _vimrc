@@ -1,11 +1,13 @@
- source $VIMRUNTIME/mswin.vim
- syntax on
- set number
+ "==============GUI configuration ==================
  if has("gui_running")
+     source $VIMRUNTIME/mswin.vim
      colorscheme desert
      source $VIMRUNTIME/delmenu.vim
      source $VIMRUNTIME/menu.vim
  endif
+
+ syntax on
+ set number
  set tabstop=4
  set shiftwidth=4
  set noswapfile
