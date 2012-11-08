@@ -1,6 +1,9 @@
+ source $VIMRUNTIME/mswin.vim
  syntax on
  set number
- colorscheme desert
+ if has("gui_running")
+     colorscheme desert
+ endif
  set tabstop=4
  set shiftwidth=4
  set noswapfile
@@ -136,6 +139,7 @@
  Bundle 'a.vim'
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
+ Bundle 'xmledit'
  " ...
 
  filetype plugin indent on     " required!
