@@ -1,11 +1,3 @@
- "==============GUI configuration ==================
- if has("gui_running")
-     source $VIMRUNTIME/mswin.vim
-     colorscheme desert
-     source $VIMRUNTIME/delmenu.vim
-     source $VIMRUNTIME/menu.vim
- endif
-
  syntax on
  set number
  set tabstop=4
@@ -15,7 +7,14 @@
  set encoding=utf-8
  set fileencodings=utf-8,chinese,latin-1
 
- language messages zh_CN.utf-8
+ "==============GUI configuration ==================
+ if has("gui_running")
+     source $VIMRUNTIME/mswin.vim
+     source $VIMRUNTIME/delmenu.vim
+     source $VIMRUNTIME/menu.vim
+     language messages zh_CN.utf-8
+     colorscheme desert
+ endif
  
  "additoins
  set title
