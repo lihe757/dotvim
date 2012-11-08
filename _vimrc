@@ -3,11 +3,17 @@
  set number
  if has("gui_running")
      colorscheme desert
+     source $VIMRUNTIME/delmenu.vim
+     source $VIMRUNTIME/menu.vim
  endif
  set tabstop=4
  set shiftwidth=4
  set noswapfile
  set nobackup
+ set encoding=utf-8
+ set fileencodings=utf-8,chinese,latin-1
+
+ language messages zh_CN.utf-8
  
  "additoins
  set title
@@ -92,7 +98,7 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
+ nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR>
  noremap \e  :!cmd /c start %:p:r.html<CR>
 
  "Backspace
@@ -139,6 +145,7 @@
  Bundle 'a.vim'
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
+ Bundle 'DoxygenToolkit.vim'
  Bundle 'xmledit'
  " ...
 
