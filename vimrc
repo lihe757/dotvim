@@ -89,12 +89,12 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- if has("win32") 
+ if has("win32")
      nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
      noremap \e  :!cmd /c start %:p:r.html<CR>
  else
-     nnoremap <F8> :!python -m markdown % > %:r.html<CR> 
-     noremap \e  :!open %:p:r.html<CR>
+     nnoremap <F8> :!python -m markdown % -e utf-8 > %:r.html<CR> 
+     noremap \e  :!open  %:r.html<CR>
  endif
 
  "Backspace

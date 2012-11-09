@@ -1,19 +1,19 @@
  syntax on
  set number
- if has("gui_running")
-     colorscheme desert
- endif
  set tabstop=4
  set shiftwidth=4
  set noswapfile
+ set nobackup
  set encoding=utf-8
  set fileencodings=utf-8,chinese,latin-1
 
-
+ "==============GUI configuration ==================
  if has("gui_running")
+     source $VIMRUNTIME/mswin.vim
      source $VIMRUNTIME/delmenu.vim
      source $VIMRUNTIME/menu.vim
      language messages zh_CN.utf-8
+     colorscheme desert
  endif
  
  "additoins
