@@ -1,16 +1,20 @@
  syntax on
  set number
- colorscheme desert
+ if has("gui_running")
+     colorscheme desert
+ endif
  set tabstop=4
  set shiftwidth=4
  set noswapfile
- set nobackup
  set encoding=utf-8
  set fileencodings=utf-8,chinese,latin-1
 
- source $VIMRUNTIME/delmenu.vim
- source $VIMRUNTIME/menu.vim
- language messages zh_CN.utf-8
+
+ if has("gui_running")
+     source $VIMRUNTIME/delmenu.vim
+     source $VIMRUNTIME/menu.vim
+     language messages zh_CN.utf-8
+ endif
  
  "additoins
  set title
@@ -41,7 +45,7 @@
 
 
  " Set Arduino dictionary word list
- au FileType arduino set dictionary=~/vimfiles/dicts/arduinowords
+ au FileType arduino set dictionary=$VIMFILES/dicts/arduinowords
  
  "key mappings
  "----------------------------
@@ -65,23 +69,27 @@
  "Ctags toggle
  nmap <F4> :TagbarToggle<CR>
  if has("win32")
+    let $VIMFILES = $HOME.'/vimfiles'
+    let $V = $HOME.'/_vimrc'
 
  else
+    let $VIMFILES = $HOME.'/.vim'
+    let $V = $HOME.'/.vimrc'
      let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
  endif
 
  "update help doc
- nnoremap <F7> :helptags ~/vimfiles/doc<CR>
+ nnoremap <F7> :helptags $HOME/doc<CR>
  
  "OmniComplete 
  inoremap <Nul> <C-x><C-o>
  
  
  "lua set
- let g:Lua_AuthorName      = 'lihex'
- let g:Lua_AuthorRef       = 'lhx'
- let g:Lua_Email           = 'lihe757@gmail.com'
- let g:Lua_Company         = 'cocos2d-x.org'
+ let g:Lua_AuthorName      = 'your name'     
+ let g:Lua_AuthorRef       = 'yourname'                         
+ let g:Lua_Email           = 'yourmail@yourmail.com'            
+ let g:Lua_Company         = 'your company'    
  
  "Use emacs style key binding on i mode
  imap <C-F> <RIGHT>
@@ -95,7 +103,7 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR>
+ nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown.py % -e chinese > %:r.html<CR>
  noremap \e  :!cmd /c start %:p:r.html<CR>
 
  "Backspace
@@ -111,7 +119,7 @@
  set nocompatible               " be iMproved
  filetype off                   " required!
 
- set rtp+=~/vimfiles/bundle/vundle/
+ set rtp+=$VIMFILES/bundle/vundle/
  call vundle#rc()
 
  " let Vundle manage Vundle
@@ -143,7 +151,9 @@
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
  Bundle 'DoxygenToolkit.vim'
- Bundle 'xmledit'
+ "Bundle 'xmledit'
+ "Bundle 'dwm.vim'
+ Bundle 'https://github.com/Lokaltog/vim-powerline.git'
  " ...
 
  filetype plugin indent on     " required!
