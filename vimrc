@@ -58,11 +58,7 @@
  
  "Ctags toggle
  nmap <F4> :TagbarToggle<CR>
- if has("win32")
-
- else
-     let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
- endif
+ let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
  "update help doc
  nnoremap <F7> :helptags ~/.vim/doc<CR>
@@ -89,22 +85,14 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- if has("win32")
-     nnoremap <F8> :!cmd /c c:\Python27\python c:\Python27\Scripts\markdown_py % -e chinese > %:r.html<CR> 
-     noremap \e  :!cmd /c start %:p:r.html<CR>
- else
-     nnoremap <F8> :!python -m markdown % -e utf-8 > %:r.html<CR> 
-     noremap \e  :!open  %:r.html<CR>
- endif
+ nnoremap <F8> :!python -m markdown % -e utf-8 > %:r.html<CR> 
+ noremap \e  :!open  %:r.html<CR>
 
- "Backspace
- if has("gui_running") && has("win32")
-    set backspace=2
-    " Make shift-insert work like in Xterm
-    map <S-Insert> <MiddleMouse>
-    map! <S-Insert> <MiddleMouse>
- endif
-
+ " for powerline
+ set laststatus=2   " Always show the statusline
+ set encoding=utf-8 " Necessary to show Unicode glyphs
+ set guifont=dzForPowerline\ for\ Powerline
+ let g:Powerline_symbols = 'fancy'
 
  "==============Vundle configuration ==================
  set nocompatible               " be iMproved
@@ -155,3 +143,4 @@
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
+ 
