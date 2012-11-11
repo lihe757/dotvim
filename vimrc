@@ -142,6 +142,7 @@
  Bundle 'bash-support.vim'
  Bundle 'vimwiki'
  Bundle 'ack.vim'
+ Bundle 'https://github.com/Lokaltog/vim-powerline.git'
  " ...
 
  filetype plugin indent on     " required!
