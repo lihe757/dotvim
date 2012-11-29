@@ -89,10 +89,12 @@
  noremap \e  :!open  %:r.html<CR>
 
  " for powerline
- set laststatus=2   " Always show the statusline
- set encoding=utf-8 " Necessary to show Unicode glyphs
- set guifont=dzForPowerline\ for\ Powerline
- let g:Powerline_symbols = 'fancy'
+ if has("gui_running") 
+     set laststatus=2   " Always show the statusline
+     set encoding=utf-8 " Necessary to show Unicode glyphs
+     set guifont=dzForPowerline\ for\ Powerline
+     let g:Powerline_symbols = 'fancy'
+ endif
 
  "==============Vundle configuration ==================
  set nocompatible               " be iMproved
