@@ -115,6 +115,13 @@
     map! <S-Insert> <MiddleMouse>
  endif
 
+ " for powerline
+ if has("gui_running")
+     set laststatus=2   " Always show the statusline
+     "set guifont=Inconsolata-dz\ for\ Powerline:h11
+     let g:Powerline_symbols = 'fancy'
+ endif
+
 
  "==============Vundle configuration ==================
  set nocompatible               " be iMproved
