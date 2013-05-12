@@ -79,8 +79,6 @@
  "Use emacs style key binding on i mode
  imap <C-F> <RIGHT>
  imap <C-B> <LEFT>
- imap <C-E> <END>
- imap <C-A> <HOME>
  imap <C-D> <DELETE>
  
  "a.vim key binding
