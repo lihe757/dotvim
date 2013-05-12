@@ -33,6 +33,9 @@
  filetype on
  filetype plugin on
 
+ "Python AutoComplPop
+ autocmd FileType python set omnifunc=pythoncomplete#Complete
+
 
  " Set Arduino dictionary word list
  au FileType arduino set dictionary=~/.vim/dicts/arduinowords
@@ -133,6 +136,7 @@
  Bundle 'vimwiki'
  Bundle 'ack.vim'
  Bundle 'https://github.com/Lokaltog/vim-powerline.git'
+ Bundle 'rails.vim'
  " ...
 
  filetype plugin indent on     " required!
