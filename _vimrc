@@ -71,11 +71,12 @@
  if has("win32")
     let $VIMFILES = $HOME.'/vimfiles'
     let $V = $HOME.'/_vimrc'
+    let g:tagbar_ctags_bin = 'C:\Git\bin\ctags'
 
  else
     let $VIMFILES = $HOME.'/.vim'
     let $V = $HOME.'/.vimrc'
-     let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+    let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
  endif
 
  "update help doc
