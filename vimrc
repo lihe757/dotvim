@@ -93,7 +93,7 @@
  if has("gui_running") 
      set laststatus=2   " Always show the statusline
      set encoding=utf-8 " Necessary to show Unicode glyphs
-     set guifont=dzForPowerline\ for\ Powerline
+     set guifont=Inconsolata-dz\ for\ Powerline
      let g:Powerline_symbols = 'fancy'
  endif
 
