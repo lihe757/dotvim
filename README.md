@@ -1,7 +1,7 @@
 #Insltall
 
         git clone git://github.com/lihe757/dotvim.git ~/.vim
-        git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+        git clone https://github.com/lihe757/vundle.git ~/.vim/bundle/vundle
         cd ~/.vim
         git submodule init
         git submodule sync
