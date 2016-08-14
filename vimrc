@@ -87,7 +87,7 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F8> :!python -m markdown % -e utf-8 > %:r.html<CR> 
+ nnoremap <F9> :!python -m markdown % -e utf-8 > %:r.html<CR> 
  noremap \e  :!open  %:r.html<CR>
 
  " for powerline
@@ -154,15 +154,25 @@
  " NOTE: comments after Bundle command are not allowed..
  
 
-    "Ctrlp
-        "{
-            "set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.png,*.gz,*.class,.DS_Store  " MacOSX/Linux
-            "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-            "nnoremap <leader>m :CtrlPMRU<CR>
-            nnoremap <leader>b :CtrlPBuffer<CR>
-            let g:ctrlp_custom_ignore = {
-                \ 'dir':  '\v[\/](target|dist)|\.(git|hg|svn|rvm)$',
-                \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
-                \ }
-            let g:ctrlp_follow_symlinks=1
-        "}
+"Ctrlp
+    "{
+        "set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.png,*.gz,*.class,.DS_Store  " MacOSX/Linux
+        "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+        "nnoremap <leader>m :CtrlPMRU<CR>
+        nnoremap <leader>b :CtrlPBuffer<CR>
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/](target|dist)|\.(git|hg|svn|rvm)$',
+            \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
+            \ }
+        let g:ctrlp_follow_symlinks=1
+    "}
+
+" 全局查找字符
+nnoremap <F8> :call SearchAll()<cr>
+function! SearchAll()
+let text = input('please search content: ')
+       if text != ''
+           exe 'grep -n -R '.text.' **'
+           exe 'copen'
+       endif
+   endfunc
