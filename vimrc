@@ -28,7 +28,8 @@
  
  "For autocomplete
  autocmd BufEnter * :syntax sync fromstart
- 
+ "开启vim 自动 运行tree
+ autocmd VimEnter * NERDTree
  "Pugins
  filetype on
  filetype plugin on
@@ -137,6 +138,8 @@
  "Bundle 'https://github.com/Valloric/YouCompleteMe.git'
  Bundle 'https://github.com/Lokaltog/vim-powerline.git'
  Bundle 'rails.vim'
+ "Ctrlp 文件模糊查找
+ Bundle 'https://github.com/kien/ctrlp.vim.git'
  " ...
 
  filetype plugin indent on     " required!
@@ -150,3 +153,16 @@
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
  
+
+    "Ctrlp
+        "{
+            "set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.png,*.gz,*.class,.DS_Store  " MacOSX/Linux
+            "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+            "nnoremap <leader>m :CtrlPMRU<CR>
+            nnoremap <leader>b :CtrlPBuffer<CR>
+            let g:ctrlp_custom_ignore = {
+                \ 'dir':  '\v[\/](target|dist)|\.(git|hg|svn|rvm)$',
+                \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
+                \ }
+            let g:ctrlp_follow_symlinks=1
+        "}
