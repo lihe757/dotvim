@@ -29,7 +29,7 @@
  "For autocomplete
  autocmd BufEnter * :syntax sync fromstart
  "开启vim 自动 运行tree
- autocmd VimEnter * NERDTree
+ "autocmd VimEnter * NERDTree
  "Pugins
  filetype on
  filetype plugin on
@@ -87,8 +87,11 @@
  inoremap \a <C-C>:A<CR>
 
  "markdown
- nnoremap <F9> :!python -m markdown % -e utf-8 > %:r.html<CR> 
+ nnoremap <F10> :!python -m markdown % -e utf-8 > %:r.html<CR>
  noremap \e  :!open  %:r.html<CR>
+
+ "路径复制
+ map <F9> :let @+=expand('%:p')<cr>
 
  " for powerline
  if has("gui_running") 
@@ -140,6 +143,8 @@
  Bundle 'rails.vim'
  "Ctrlp 文件模糊查找
  Bundle 'https://github.com/kien/ctrlp.vim.git'
+ "typescript
+ Bundle 'https://github.com/leafgarland/typescript-vim'
  " ...
 
  filetype plugin indent on     " required!
