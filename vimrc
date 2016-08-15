@@ -58,7 +58,7 @@
  nnoremap m-2<cr> :m-2
  
  "NerdTree Toggle
- nnoremap <F3> :NERDTreeToggle<CR>
+ nnoremap <F3> :NERDTree %:h <CR>
  
  "Ctags toggle
  nmap <F4> :TagbarToggle<CR>
