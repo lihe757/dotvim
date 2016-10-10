@@ -97,8 +97,8 @@
  if has("gui_running") 
  " set laststatus=2   " Always show the statusline
  " set encoding=utf-8 " Necessary to show Unicode glyphs
- " set guifont=dzForPowerline\ for\ Powerline
- " let g:Powerline_symbols = 'fancy'
+  set guifont=dzForPowerline\ for\ Powerline
+  let g:Powerline_symbols = 'fancy'
  endif
 
  "==============Vundle configuration ==================
@@ -163,11 +163,13 @@
     "{
         "set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.png,*.gz,*.class,.DS_Store  " MacOSX/Linux
         "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-        "nnoremap <leader>m :CtrlPMRU<CR>
+        nnoremap <leader>m :CtrlPMRU<CR>
         nnoremap <leader>b :CtrlPBuffer<CR>
+        nnoremap <leader>p :CtrlP $CWD<CR>
+        let g:ctrlp_working_path_mode = 'c'
         let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](target|dist)|\.(git|hg|svn|rvm)$',
-            \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$',
+            \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz)$|\.g.js',
             \ }
         let g:ctrlp_follow_symlinks=1
     "}
